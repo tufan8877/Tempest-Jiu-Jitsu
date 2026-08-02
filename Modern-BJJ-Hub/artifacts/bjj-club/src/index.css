@@ -125,17 +125,17 @@
 }
 
 @media (min-width: 768px) {
-  main > div > section:first-child {
+  main > div > section:first-child:has(> div[style*="hero-bg.jpg"]) {
     align-items: center !important;
     padding-top: 0 !important;
   }
 
-  main > div > section:first-child > .container {
+  main > div > section:first-child:has(> div[style*="hero-bg.jpg"]) > .container {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
 
-  main > div > section:first-child > .container > div {
-    transform: translateY(-2rem) !important;
+  main > div > section:first-child:has(> div[style*="hero-bg.jpg"]) > .container > div {
+    transform: translateY(2.5rem) !important;
   }
 }
