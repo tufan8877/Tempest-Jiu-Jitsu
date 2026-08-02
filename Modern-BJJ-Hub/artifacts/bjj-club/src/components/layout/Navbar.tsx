@@ -76,7 +76,7 @@ export function Navbar() {
             </Link>
           ))}
           <Button asChild>
-            <Link href="/mitglied-werden">Jetzt anmelden</Link>
+            <Link href="/mitglied-werden">Jetzt Mitglied werden</Link>
           </Button>
         </nav>
 
@@ -104,7 +104,7 @@ export function Navbar() {
             </Link>
           ))}
           <Button asChild className="w-full">
-            <Link href="/mitglied-werden">Jetzt anmelden</Link>
+            <Link href="/mitglied-werden">Jetzt Mitglied werden</Link>
           </Button>
         </div>
       )}
