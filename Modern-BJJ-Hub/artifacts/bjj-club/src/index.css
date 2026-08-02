@@ -122,3 +122,9 @@
     @apply font-display tracking-wide uppercase;
   }
 }
+
+@media (min-width: 768px) {
+  main > div > section:first-child > .container > div {
+    transform: translateY(-6rem) !important;
+  }
+}
