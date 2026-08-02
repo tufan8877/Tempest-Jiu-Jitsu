@@ -11,11 +11,11 @@ export default function Impressum() {
             Angaben gemäß § 5 TMG:
           </p>
           
-          <h3>BJJ Academy e.V.</h3>
+          <h3>Tempest Jiu-Jitsu Vienna</h3>
           <p>
             Kampfstraße 42<br />
             10115 Berlin<br />
-            Deutschland
+            Österreich
           </p>
           
           <h3>Vertreten durch:</h3>
