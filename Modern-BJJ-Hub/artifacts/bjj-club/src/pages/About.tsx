@@ -31,9 +31,18 @@ export default function About() {
               <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-display uppercase mb-8">
                 Unsere Philosophie
               </motion.h1>
-              <motion.p variants={fadeIn} className="text-xl text-muted-foreground leading-relaxed">
-                Wir glauben, dass Brazilian Jiu-Jitsu mehr als nur ein Sport ist. Es ist ein Werkzeug zur persönlichen Entwicklung. Auf der Matte gibt es keine Ausreden, keine Abkürzungen – nur die ehrliche Arbeit an sich selbst.
-              </motion.p>
+              <motion.div variants={fadeIn} className="mx-auto max-w-3xl space-y-5 text-xl text-muted-foreground leading-relaxed">
+                <p className="text-2xl md:text-3xl font-display uppercase text-foreground">Tempest</p>
+                <p>Ein Sturm entsteht nicht aus einem einzigen Wind.</p>
+                <p>Er entsteht, wenn viele Kräfte zu einer werden.</p>
+                <p className="font-semibold text-foreground">Genau das ist Tempest.</p>
+                <p>
+                  Jeder beginnt seinen eigenen Weg. Doch gemeinsam werden wir stärker, mutiger und zu einer Kraft, die nur schwer aufzuhalten ist.
+                </p>
+                <p className="pt-2 font-bold uppercase tracking-[0.16em] text-primary">
+                  Train together. Grow together. Become the Storm.
+                </p>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -81,7 +90,14 @@ export default function About() {
 
       <section className="py-24">
         <div className="container mx-auto px-6">
-          <SectionHeader title="Das Team" subtitle="Unser Trainer" align="center" />
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center text-5xl md:text-7xl font-display uppercase"
+          >
+            Unser Trainer
+          </motion.h2>
 
           <div className="max-w-6xl mx-auto mt-16">
             {INSTRUCTORS.map((instructor, i) => (
