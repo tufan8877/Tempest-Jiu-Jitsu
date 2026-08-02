@@ -19,7 +19,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-muted-foreground text-sm">
-              Elite Brazilian Jiu-Jitsu in Deutschland. Schmiede deinen Charakter auf der Matte.
+              Elite Brazilian Jiu-Jitsu in Österreich. Schmiede deinen Charakter auf der Matte.
             </p>
             <div className="flex gap-4 pt-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -89,7 +89,7 @@ export function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} BJJ Academy. Alle Rechte vorbehalten.
+            &copy; {new Date().getFullYear()} Tempest Jiu-Jitsu Vienna. Alle Rechte vorbehalten.
           </p>
         </div>
       </div>
