@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -210,8 +211,8 @@ export default function Contact() {
               </div>
             </div>
 
-            <Button type="button" size="lg" className="px-10">
-              Jetzt Mitglied werden
+            <Button size="lg" className="px-10" asChild>
+              <Link href="/mitglied-werden">Jetzt Mitglied werden</Link>
             </Button>
           </motion.div>
         </div>
