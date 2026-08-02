@@ -65,8 +65,8 @@ export default function Contact() {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h4 className="mb-1 font-bold uppercase tracking-wider">Dojo</h4>
-                    <p className="text-muted-foreground">Kampfstraße 42<br />10115 Berlin</p>
+                    <h4 className="mb-1 font-bold uppercase tracking-wider">Standort</h4>
+                    <p className="text-muted-foreground">Standort folgt bald</p>
                   </div>
                 </motion.div>
 
