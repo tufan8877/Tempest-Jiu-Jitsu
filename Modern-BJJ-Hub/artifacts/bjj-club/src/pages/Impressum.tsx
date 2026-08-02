@@ -26,7 +26,7 @@ export default function Impressum() {
           <h3>Kontakt:</h3>
           <p>
             Telefon: +49 123 4567890<br />
-            E-Mail: info@bjj-academy.de
+            E-Mail: <a href="mailto:kontakt@tempestbjjvienna.at">kontakt@tempestbjjvienna.at</a>
           </p>
           
           <h3>Registereintrag:</h3>
