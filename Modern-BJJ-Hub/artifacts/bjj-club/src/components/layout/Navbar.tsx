@@ -62,13 +62,13 @@ export function Navbar() {
           />
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+        <nav className="hidden md:flex items-center gap-5 lg:gap-8">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-semibold uppercase tracking-wider transition-colors hover:text-primary",
+                "whitespace-nowrap text-sm font-semibold uppercase tracking-wider transition-colors hover:text-primary",
                 location === link.href ? "text-primary" : "text-muted-foreground"
               )}
             >
