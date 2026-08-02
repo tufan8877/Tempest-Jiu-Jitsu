@@ -41,7 +41,7 @@ export default function Datenschutz() {
             Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
           </p>
           <p>
-            BJJ Academy e.V.<br />
+            Tempest Jiu-Jitsu Vienna<br />
             Kampfstraße 42<br />
             10115 Berlin<br />
             Telefon: +49 123 4567890<br />
