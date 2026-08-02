@@ -5,22 +5,10 @@ import { Button } from "@/components/ui/button";
 
 const INSTRUCTORS = [
   {
-    name: "Prof. Ricardo Santos",
-    rank: "Schwarzgurt 2. Dan",
+    name: "Leonid",
+    rank: "Schwarzgurt 1. Dan",
     role: "Cheftrainer",
-    bio: "Ricardo trainiert seit über 20 Jahren BJJ und hat seine Wurzeln in São Paulo. Er legt Wert auf technische Perfektion und eine starke, unterstützende Gemeinschaft."
-  },
-  {
-    name: "Lukas Weber",
-    rank: "Schwarzgurt",
-    role: "Trainer Advanced & No-Gi",
-    bio: "Als aktiver Wettkämpfer bringt Lukas moderne Grappling-Ansätze in die Academy. Sein Fokus liegt auf schnellen Transitions und Submission-Ketten."
-  },
-  {
-    name: "Sarah Müller",
-    rank: "Braungurt",
-    role: "Trainerin Basics",
-    bio: "Sarah ist die erste Anlaufstelle für Anfänger. Mit unglaublicher Geduld und einem Auge für Details macht sie die komplexen BJJ-Konzepte leicht verständlich."
+    bio: "Leonid trainiert seit über 20 Jahren BJJ und hat seine Wurzeln in der Ukraine. Er legt Wert auf technische Perfektion und eine starke, unterstützende Gemeinschaft."
   }
 ];
 
@@ -90,9 +78,9 @@ export default function About() {
       {/* TEAM SECTION */}
       <section className="py-24">
         <div className="container mx-auto px-6">
-          <SectionHeader title="Das Team" subtitle="Unsere Trainer" align="center" />
+          <SectionHeader title="Das Team" subtitle="Unser Trainer" align="center" />
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div className="max-w-lg mx-auto mt-16">
             {INSTRUCTORS.map((instructor, i) => (
               <motion.div 
                 key={i}
