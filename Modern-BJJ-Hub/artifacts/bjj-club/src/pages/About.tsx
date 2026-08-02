@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { SectionHeader, staggerContainer, fadeIn } from "@/components/ui/animations";
+import { staggerContainer, fadeIn } from "@/components/ui/animations";
 import { Button } from "@/components/ui/button";
 import leonidImage from "../../../../Leonid Bild.jpeg";
 
@@ -48,47 +48,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 bg-card border-y border-border">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative aspect-square md:aspect-[4/3]"
-            >
-              <div className="absolute inset-0 bg-primary/20 transform -translate-x-4 -translate-y-4" />
-              <img
-                src={`${import.meta.env.BASE_URL}about-belt.jpg`}
-                alt="BJJ Belt"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <SectionHeader title="Die Wurzeln" subtitle="Tradition & Moderne" />
-              <motion.div variants={fadeIn} className="space-y-6 text-muted-foreground text-lg">
-                <p>
-                  Gegründet im Jahr 2015, hat sich Tempest Jiu-Jitsu Vienna schnell zu einer der renommiertesten Adressen für Kampfsport in der Region entwickelt.
-                </p>
-                <p>
-                  Wir verbinden die traditionellen Werte des Brazilian Jiu-Jitsu – Respekt, Hingabe, Loyalität – mit modernen Trainingsmethoden und Sportwissenschaft. Unser Ziel ist es, nicht nur gute Kämpfer hervorzubringen, sondern auch gute Menschen.
-                </p>
-                <p>
-                  Egal, ob du Fitness suchst, dich selbst verteidigen lernen willst oder Ambitionen hast, Weltmeister zu werden: Du bist hier richtig.
-                </p>
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24">
+      <section className="border-y border-border bg-card py-24">
         <div className="container mx-auto px-6">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -107,7 +67,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2 }}
-                className="grid grid-cols-1 overflow-hidden border border-border bg-card lg:grid-cols-[minmax(320px,420px)_1fr]"
+                className="grid grid-cols-1 overflow-hidden border border-border bg-background lg:grid-cols-[minmax(320px,420px)_1fr]"
               >
                 <div className="relative min-h-[520px] overflow-hidden bg-muted lg:min-h-[680px]">
                   <img
@@ -146,7 +106,7 @@ export default function About() {
           Wirf deine Zweifel über Bord. Komm vorbei und lerne uns kennen.
         </p>
         <Button size="lg" asChild>
-          <Link href="/kontakt">Nachricht schreiben</Link>
+          <Link href="/mitglied-werden">Mitglied werden</Link>
         </Button>
       </section>
     </div>
