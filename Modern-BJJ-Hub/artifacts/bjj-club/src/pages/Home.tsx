@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { fadeIn, staggerContainer, SectionHeader } from "@/components/ui/animations";
 import { Shield, Users, Trophy, ChevronRight } from "lucide-react";
+import leonidAndProfImage from "../../../../Leonid und Prof.jpeg";
 
 const FEATURES = [
   {
@@ -34,16 +35,15 @@ const SCHEDULE = [
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* HERO SECTION */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('${import.meta.env.BASE_URL}hero-bg.jpg')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" />
-        
+
         <div className="container relative z-10 px-6 pt-20">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
@@ -55,17 +55,17 @@ export default function Home() {
                 Elite Brazilian Jiu-Jitsu
               </span>
             </motion.div>
-            
+
             <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.9] mb-8 uppercase">
               Schmiede <br />
               <span className="text-transparent stroke-text" style={{ WebkitTextStroke: "2px hsl(var(--foreground))" }}>Deinen</span> <br />
               Charakter
             </motion.h1>
-            
+
             <motion.p variants={fadeIn} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl">
               Werde Teil von Tempest Jiu-Jitsu Vienna. Der Ort in Österreich für ernsthafte Kampfkünstler, die nach Exzellenz streben. Bereit für die Matte?
             </motion.p>
-            
+
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
                 <Link href="/kontakt">Probetraining vereinbaren</Link>
@@ -78,19 +78,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* INTRO SECTION */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
             >
-              <SectionHeader 
-                title="Die Kunst des Kampfes" 
-                subtitle="Was ist BJJ?" 
+              <SectionHeader
+                title="Die Kunst des Kampfes"
+                subtitle="Was ist BJJ?"
               />
               <motion.div variants={fadeIn} className="space-y-6 text-muted-foreground text-lg">
                 <p>
@@ -108,34 +107,34 @@ export default function Home() {
                 </div>
               </motion.div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative aspect-square md:aspect-[4/3] w-full"
+              className="relative aspect-square md:aspect-[4/3] w-full overflow-hidden"
             >
               <div className="absolute inset-0 bg-primary/20 transform translate-x-4 translate-y-4" />
-              <img 
-                src={`${import.meta.env.BASE_URL}classes.jpg`} 
-                alt="BJJ Training" 
-                className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              <img
+                src={leonidAndProfImage}
+                alt="Leonid Maslovskyi mit seinem BJJ-Professor"
+                className="absolute inset-0 w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
+                loading="eager"
               />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* WHY US SECTION */}
       <section className="py-24 bg-card border-y border-border">
         <div className="container mx-auto px-6">
-          <SectionHeader 
-            title="Warum bei uns?" 
+          <SectionHeader
+            title="Warum bei uns?"
             subtitle="Tempest Jiu-Jitsu Vienna"
             align="center"
           />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             {FEATURES.map((feature, i) => (
               <motion.div
@@ -159,16 +158,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SCHEDULE SECTION */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <SectionHeader 
-              title="Trainingszeiten" 
+            <SectionHeader
+              title="Trainingszeiten"
               subtitle="Wann wir rollen"
               align="center"
             />
-            
+
             <div className="mt-16 space-y-4">
               {SCHEDULE.map((dayData, i) => (
                 <motion.div
@@ -193,7 +191,7 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-            
+
             <div className="mt-12 text-center">
               <p className="text-muted-foreground mb-6">Alle Kurse finden in unserem Dojo in der Kampfstraße 42 statt.</p>
               <Button asChild>
@@ -204,7 +202,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
       <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 opacity-10">
           <span className="text-[20rem] font-display font-bold leading-none select-none">BJJ</span>
