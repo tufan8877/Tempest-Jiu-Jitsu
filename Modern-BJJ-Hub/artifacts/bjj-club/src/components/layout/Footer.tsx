@@ -81,7 +81,9 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Mail size={18} className="text-primary shrink-0" />
-                <span>info@bjj-academy.de</span>
+                <a href="mailto:kontakt@tempestbjjvienna.at" className="transition-colors hover:text-primary">
+                  kontakt@tempestbjjvienna.at
+                </a>
               </li>
             </ul>
           </div>
