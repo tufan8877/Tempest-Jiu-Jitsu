@@ -86,43 +86,52 @@ export default function Membership() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-card py-20 md:py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-16">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative aspect-square md:aspect-[4/3]"
-            >
-              <div className="absolute inset-0 -translate-x-3 -translate-y-3 bg-primary/20 md:-translate-x-4 md:-translate-y-4" />
-              <img
-                src={`${import.meta.env.BASE_URL}about-belt.jpg`}
-                alt="Brazilian Jiu-Jitsu Gürtel bei Tempest Jiu-Jitsu Vienna"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            </motion.div>
+      <section className="relative overflow-hidden border-b border-border bg-muted py-20 text-center md:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.12),transparent_60%)]" />
+        <div className="container relative mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mx-auto max-w-5xl"
+          >
+            <span className="mb-3 block text-sm font-bold uppercase tracking-[0.2em] text-primary">
+              Deine Reise beginnt hier
+            </span>
+            <h2 className="mb-5 text-4xl font-display uppercase sm:text-5xl md:text-6xl">
+              Vom ersten Schritt zum Schwarzgurt
+            </h2>
+            <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              Jeder Weg beginnt als Weißgurt. Mit regelmäßigem Training, Geduld und Unterstützung wächst du Schritt für Schritt – auf der Matte und darüber hinaus.
+            </p>
 
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <SectionHeader title="Die Wurzeln" subtitle="Tradition & Moderne" />
-              <motion.div variants={fadeIn} className="space-y-6 text-lg leading-relaxed text-muted-foreground">
-                <p>
-                  Gegründet im Jahr 2015, hat sich Tempest Jiu-Jitsu Vienna schnell zu einer renommierten Adresse für Kampfsport entwickelt.
-                </p>
-                <p>
-                  Wir verbinden die traditionellen Werte des Brazilian Jiu-Jitsu – Respekt, Hingabe und Loyalität – mit modernen Trainingsmethoden und Sportwissenschaft. Unser Ziel ist es, nicht nur gute Kämpfer hervorzubringen, sondern auch starke Persönlichkeiten.
-                </p>
-                <p>
-                  Egal, ob du Fitness suchst, Selbstverteidigung lernen möchtest oder sportliche Ziele verfolgst: Bei uns findest du den richtigen Einstieg.
-                </p>
-              </motion.div>
-            </motion.div>
-          </div>
+            <div className="mb-12 flex flex-wrap items-end justify-center gap-4 md:gap-8">
+              <div className="flex flex-col items-center gap-3">
+                <div className="h-5 w-20 border border-gray-300 bg-white md:w-28" />
+                <span className="text-xs font-bold uppercase tracking-wider">Weiß</span>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="h-5 w-20 bg-blue-600 md:w-28" />
+                <span className="text-xs font-bold uppercase tracking-wider">Blau</span>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="h-5 w-20 bg-purple-700 md:w-28" />
+                <span className="text-xs font-bold uppercase tracking-wider">Lila</span>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="h-5 w-20 bg-[#8b5a2b] md:w-28" />
+                <span className="text-xs font-bold uppercase tracking-wider">Braun</span>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="flex h-5 w-20 items-center justify-end border border-gray-800 bg-black md:w-28">
+                  <div className="h-full w-5 bg-red-600" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider">Schwarz</span>
+              </div>
+            </div>
+
+            <WixMembershipButton className="min-w-[240px]" />
+          </motion.div>
         </div>
       </section>
 
