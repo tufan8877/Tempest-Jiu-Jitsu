@@ -74,19 +74,19 @@ const SCHEDULE = [
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden">
-      <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 md:h-screen md:pt-0">
+      <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 md:h-screen md:items-start md:pt-24">
         <div
           className="absolute inset-0 bg-cover bg-[62%_center] bg-no-repeat md:bg-center"
           style={{ backgroundImage: `url('${import.meta.env.BASE_URL}hero-bg.jpg')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" />
 
-        <div className="container relative z-10 mx-auto px-6 py-12 md:py-0">
+        <div className="container relative z-10 mx-auto px-6 py-12 md:pt-28 md:pb-0">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="max-w-3xl md:-translate-y-10"
+            className="max-w-3xl md:-translate-y-24 lg:-translate-y-28"
           >
             <motion.div variants={fadeIn} className="mb-5 flex items-center gap-3 md:mb-6 md:gap-4">
               <div className="h-[2px] w-9 bg-primary md:w-12" />
