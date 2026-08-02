@@ -33,7 +33,7 @@ export default function About() {
           <div className="max-w-4xl mx-auto text-center">
             <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
               <motion.span variants={fadeIn} className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block">
-                Die BJJ Academy
+                Tempest Jiu-Jitsu Vienna
               </motion.span>
               <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-display uppercase mb-8">
                 Unsere Philosophie
@@ -73,7 +73,7 @@ export default function About() {
               <SectionHeader title="Die Wurzeln" subtitle="Tradition & Moderne" />
               <motion.div variants={fadeIn} className="space-y-6 text-muted-foreground text-lg">
                 <p>
-                  Gegründet im Jahr 2015, hat sich die BJJ Academy schnell zu einer der renommiertesten Adressen für Kampfsport in der Region entwickelt.
+                  Gegründet im Jahr 2015, hat sich Tempest Jiu-Jitsu Vienna schnell zu einer der renommiertesten Adressen für Kampfsport in der Region entwickelt.
                 </p>
                 <p>
                   Wir verbinden die traditionellen Werte des Brazilian Jiu-Jitsu – Respekt, Hingabe, Loyalität – mit modernen Trainingsmethoden und Sportwissenschaft. Unser Ziel ist es, nicht nur gute Kämpfer hervorzubringen, sondern auch gute Menschen.
