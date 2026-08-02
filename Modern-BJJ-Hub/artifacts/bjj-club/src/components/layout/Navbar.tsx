@@ -23,10 +23,17 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
+
+  const handleLogoClick = () => {
+    setMobileMenuOpen(false);
+
+    if (location === "/") {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <header
@@ -40,8 +47,9 @@ export function Navbar() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link
           href="/"
+          onClick={handleLogoClick}
           className="group flex shrink-0 items-center"
-          aria-label="Tempest Jiu-Jitsu Vienna – Startseite"
+          aria-label="Tempest Jiu-Jitsu Vienna – zur Startseite und nach oben"
         >
           <img
             src={`${import.meta.env.BASE_URL}tempest-logo-header.svg`}
@@ -53,7 +61,6 @@ export function Navbar() {
           />
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <Link
@@ -72,17 +79,15 @@ export function Navbar() {
           </Button>
         </nav>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="md:hidden text-foreground hover:text-primary transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Menu"
+          aria-label="Menü öffnen oder schließen"
         >
           {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-6 flex flex-col gap-6 shadow-xl">
           {NAV_LINKS.map((link) => (
