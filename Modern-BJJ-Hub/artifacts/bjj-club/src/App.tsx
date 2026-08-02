@@ -17,6 +17,7 @@ import { Footer } from "@/components/layout/Footer";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Training from "@/pages/Training";
+import Membership from "@/pages/Membership";
 import Contact from "@/pages/Contact";
 import Impressum from "@/pages/Impressum";
 import Datenschutz from "@/pages/Datenschutz";
@@ -59,6 +60,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/ueber-uns" component={About} />
           <Route path="/trainingszeiten" component={Training} />
+          <Route path="/mitglied-werden" component={Membership} />
           <Route path="/kontakt" component={Contact} />
           <Route path="/impressum" component={Impressum} />
           <Route path="/datenschutz" component={Datenschutz} />
