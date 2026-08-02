@@ -140,36 +140,6 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-16 bg-muted text-center border-y border-border">
-        <div className="container mx-auto px-6">
-          <h3 className="font-display uppercase text-2xl mb-8">Der Weg auf der Matte</h3>
-          <div className="flex justify-center items-center flex-wrap gap-4 md:gap-8">
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-16 md:w-24 h-4 bg-white border border-gray-300"></div>
-              <span className="text-xs font-bold uppercase tracking-wider">Weiß</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-16 md:w-24 h-4 bg-blue-600"></div>
-              <span className="text-xs font-bold uppercase tracking-wider">Blau</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-16 md:w-24 h-4 bg-purple-700"></div>
-              <span className="text-xs font-bold uppercase tracking-wider">Lila</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-16 md:w-24 h-4 bg-[#8b5a2b]"></div>
-              <span className="text-xs font-bold uppercase tracking-wider">Braun</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-16 md:w-24 h-4 bg-black border border-gray-800 flex justify-end items-center">
-                <div className="h-full w-4 bg-red-600"></div>
-              </div>
-              <span className="text-xs font-bold uppercase tracking-wider">Schwarz</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="py-24 text-center container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-display uppercase mb-6">Werde Teil des Teams</h2>
         <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
