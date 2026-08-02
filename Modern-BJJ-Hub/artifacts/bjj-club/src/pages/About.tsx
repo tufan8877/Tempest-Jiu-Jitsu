@@ -8,7 +8,7 @@ const INSTRUCTORS = [
     name: "Leonid Maslovskyi",
     rank: "Schwarzgurt 1. Dan",
     role: "Cheftrainer",
-    image: "leonid-trainer.svg",
+    image: "leonid-trainer.jpg",
     bio: [
       "Mein Name ist Leonid Maslovskyi. Ich bin 38 Jahre alt, komme aus der Ukraine und lebe seit 16 Jahren in Österreich. Seit über 12 Jahren trainiere ich Brazilian Jiu-Jitsu und bin Schwarzgurt unter Peter Pezia (ZR Team Vienna).",
       "Für mich ist Jiu-Jitsu mehr als nur ein Sport – es ist eine Lebenseinstellung. Ich glaube an Disziplin, Respekt und gegenseitige Unterstützung.",
