@@ -63,7 +63,7 @@ export default function Home() {
             </motion.h1>
             
             <motion.p variants={fadeIn} className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl">
-              Tritt der BJJ Academy bei. Der Ort in Deutschland für ernsthafte Kampfkünstler, die nach Exzellenz streben. Bereit für die Matte?
+              Werde Teil von Tempest Jiu-Jitsu Vienna. Der Ort in Österreich für ernsthafte Kampfkünstler, die nach Exzellenz streben. Bereit für die Matte?
             </motion.p>
             
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
@@ -132,7 +132,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <SectionHeader 
             title="Warum bei uns?" 
-            subtitle="Die BJJ Academy"
+            subtitle="Tempest Jiu-Jitsu Vienna"
             align="center"
           />
           
