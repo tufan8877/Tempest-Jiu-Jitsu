@@ -18,19 +18,32 @@ const INSTRUCTORS = [
   }
 ];
 
+const TRAINER_IMAGE_PARTS = [
+  "leonid-v5-01.txt",
+  "leonid-v5-02.txt",
+  "leonid-v5-03.txt"
+];
+
 export default function About() {
   const [trainerImage, setTrainerImage] = useState("");
 
   useEffect(() => {
     let active = true;
 
-    fetch(`${import.meta.env.BASE_URL}leonid-photo-v3.b64?v=3`, { cache: "no-store" })
-      .then((response) => {
-        if (!response.ok) throw new Error("Trainerbild konnte nicht geladen werden");
-        return response.text();
-      })
-      .then((base64) => {
-        if (active) setTrainerImage(`data:image/jpeg;base64,${base64.trim()}`);
+    Promise.all(
+      TRAINER_IMAGE_PARTS.map((file) =>
+        fetch(`${import.meta.env.BASE_URL}${file}?v=5`, { cache: "no-store" }).then((response) => {
+          if (!response.ok) {
+            throw new Error("Trainerbild konnte nicht geladen werden");
+          }
+          return response.text();
+        })
+      )
+    )
+      .then((parts) => {
+        if (!active) return;
+        const base64 = parts.map((part) => part.trim()).join("");
+        setTrainerImage(`data:image/jpeg;base64,${base64}`);
       })
       .catch(() => {
         if (active) setTrainerImage("");
@@ -121,6 +134,7 @@ export default function About() {
                       src={trainerImage}
                       alt={`${instructor.name}, Cheftrainer bei Tempest Jiu-Jitsu Vienna`}
                       className="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
+                      onError={() => setTrainerImage("")}
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center bg-card text-sm text-muted-foreground">
