@@ -82,7 +82,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30" />
 
-        <div className="container relative z-10 px-6 pt-20">
+        <div className="container relative z-10 px-6 pt-8 md:pt-0 -translate-y-10 md:-translate-y-16">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -92,7 +92,7 @@ export default function Home() {
             <motion.div variants={fadeIn} className="flex items-center gap-4 mb-6">
               <div className="h-[2px] w-12 bg-primary" />
               <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm">
-                Elite Brazilian Jiu-Jitsu
+                Tempest Jiu-Jitsu Vienna
               </span>
             </motion.div>
 
