@@ -87,7 +87,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="mb-1 font-bold uppercase tracking-wider">E-Mail</h4>
-                    <p className="text-muted-foreground">info@bjj-academy.de</p>
+                    <a href="mailto:kontakt@tempestbjjvienna.at" className="text-muted-foreground transition-colors hover:text-primary">
+                      kontakt@tempestbjjvienna.at
+                    </a>
                   </div>
                 </motion.div>
 
