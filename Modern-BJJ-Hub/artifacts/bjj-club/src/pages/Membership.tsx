@@ -79,9 +79,6 @@ export default function Membership() {
             <motion.p variants={fadeIn} className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
               Werde Teil von Tempest Jiu-Jitsu Vienna. Deine Mitgliedschaft kannst du künftig einfach und sicher über unsere Wix-Buchungsseite auswählen und abschließen.
             </motion.p>
-            <motion.div variants={fadeIn} className="mt-9 flex justify-center">
-              <WixMembershipButton className="min-w-[240px]" />
-            </motion.div>
           </motion.div>
         </div>
       </section>
