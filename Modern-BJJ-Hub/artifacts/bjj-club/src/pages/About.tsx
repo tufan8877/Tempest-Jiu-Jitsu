@@ -5,10 +5,16 @@ import { Button } from "@/components/ui/button";
 
 const INSTRUCTORS = [
   {
-    name: "Leonid",
+    name: "Leonid Maslovskyi",
     rank: "Schwarzgurt 1. Dan",
     role: "Cheftrainer",
-    bio: "Leonid trainiert seit über 20 Jahren BJJ und hat seine Wurzeln in der Ukraine. Er legt Wert auf technische Perfektion und eine starke, unterstützende Gemeinschaft."
+    image: "leonid-trainer.svg",
+    bio: [
+      "Mein Name ist Leonid Maslovskyi. Ich bin 38 Jahre alt, komme aus der Ukraine und lebe seit 16 Jahren in Österreich. Seit über 12 Jahren trainiere ich Brazilian Jiu-Jitsu und bin Schwarzgurt unter Peter Pezia (ZR Team Vienna).",
+      "Für mich ist Jiu-Jitsu mehr als nur ein Sport – es ist eine Lebenseinstellung. Ich glaube an Disziplin, Respekt und gegenseitige Unterstützung.",
+      "Schritt für Schritt werden wir stärker. Gemeinsam helfen wir uns, nicht nur auf der Matte, sondern auch im Alltag zu wachsen.",
+      "Mein Ziel ist es, ein Team aufzubauen, in dem jeder den anderen unterstützt, sein Potenzial entfaltet und die beste Version seiner selbst wird."
+    ]
   }
 ];
 
@@ -75,34 +81,47 @@ export default function About() {
         </div>
       </section>
 
-      {/* TEAM SECTION */}
+      {/* TRAINER SECTION */}
       <section className="py-24">
         <div className="container mx-auto px-6">
           <SectionHeader title="Das Team" subtitle="Unser Trainer" align="center" />
           
-          <div className="max-w-lg mx-auto mt-16">
+          <div className="max-w-6xl mx-auto mt-16">
             {INSTRUCTORS.map((instructor, i) => (
-              <motion.div 
-                key={i}
+              <motion.article 
+                key={instructor.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2 }}
-                className="bg-card border border-border group"
+                className="grid grid-cols-1 overflow-hidden border border-border bg-card lg:grid-cols-[minmax(320px,420px)_1fr]"
               >
-                <div className="p-8">
-                  <div className="mb-6 flex flex-col gap-2">
+                <div className="relative min-h-[520px] overflow-hidden bg-muted lg:min-h-[680px]">
+                  <img
+                    src={`${import.meta.env.BASE_URL}${instructor.image}`}
+                    alt={`${instructor.name}, Cheftrainer bei Tempest Jiu-Jitsu Vienna`}
+                    className="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-card/80 to-transparent lg:hidden" />
+                </div>
+
+                <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14">
+                  <div className="mb-8 flex flex-col gap-2">
                     <span className="text-primary font-bold uppercase text-xs tracking-widest">{instructor.role}</span>
-                    <h3 className="text-3xl font-display uppercase">{instructor.name}</h3>
+                    <h3 className="text-4xl md:text-5xl font-display uppercase">{instructor.name}</h3>
                     <span className="inline-block bg-muted text-muted-foreground text-xs font-bold px-3 py-1 mt-2 self-start uppercase">
                       {instructor.rank}
                     </span>
                   </div>
-                  <p className="text-muted-foreground">
-                    {instructor.bio}
-                  </p>
+
+                  <div className="space-y-5 text-muted-foreground text-base leading-relaxed md:text-lg">
+                    {instructor.bio.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>
