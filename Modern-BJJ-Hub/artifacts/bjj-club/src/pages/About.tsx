@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { SectionHeader, staggerContainer, fadeIn } from "@/components/ui/animations";
@@ -8,7 +9,6 @@ const INSTRUCTORS = [
     name: "Leonid Maslovskyi",
     rank: "Schwarzgurt 1. Dan",
     role: "Cheftrainer",
-    image: "leonid-trainer.jpg",
     bio: [
       "Mein Name ist Leonid Maslovskyi. Ich bin 38 Jahre alt, komme aus der Ukraine und lebe seit 16 Jahren in Österreich. Seit über 12 Jahren trainiere ich Brazilian Jiu-Jitsu und bin Schwarzgurt unter Peter Pezia (ZR Team Vienna).",
       "Für mich ist Jiu-Jitsu mehr als nur ein Sport – es ist eine Lebenseinstellung. Ich glaube an Disziplin, Respekt und gegenseitige Unterstützung.",
@@ -19,9 +19,30 @@ const INSTRUCTORS = [
 ];
 
 export default function About() {
+  const [trainerImage, setTrainerImage] = useState("");
+
+  useEffect(() => {
+    let active = true;
+
+    fetch(`${import.meta.env.BASE_URL}leonid-photo-v3.b64?v=3`, { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) throw new Error("Trainerbild konnte nicht geladen werden");
+        return response.text();
+      })
+      .then((base64) => {
+        if (active) setTrainerImage(`data:image/jpeg;base64,${base64.trim()}`);
+      })
+      .catch(() => {
+        if (active) setTrainerImage("");
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen pt-24 bg-background">
-      {/* HEADER SECTION */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
@@ -40,24 +61,23 @@ export default function About() {
         </div>
       </section>
 
-      {/* STORY SPLIT SECTION */}
       <section className="py-20 bg-card border-y border-border">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               className="relative aspect-square md:aspect-[4/3]"
             >
               <div className="absolute inset-0 bg-primary/20 transform -translate-x-4 -translate-y-4" />
-              <img 
-                src={`${import.meta.env.BASE_URL}about-belt.jpg`} 
-                alt="BJJ Belt" 
+              <img
+                src={`${import.meta.env.BASE_URL}about-belt.jpg`}
+                alt="BJJ Belt"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </motion.div>
-            
+
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -81,14 +101,13 @@ export default function About() {
         </div>
       </section>
 
-      {/* TRAINER SECTION */}
       <section className="py-24">
         <div className="container mx-auto px-6">
           <SectionHeader title="Das Team" subtitle="Unser Trainer" align="center" />
-          
+
           <div className="max-w-6xl mx-auto mt-16">
             {INSTRUCTORS.map((instructor, i) => (
-              <motion.article 
+              <motion.article
                 key={instructor.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -97,12 +116,17 @@ export default function About() {
                 className="grid grid-cols-1 overflow-hidden border border-border bg-card lg:grid-cols-[minmax(320px,420px)_1fr]"
               >
                 <div className="relative min-h-[520px] overflow-hidden bg-muted lg:min-h-[680px]">
-                  <img
-                    src={`${import.meta.env.BASE_URL}${instructor.image}`}
-                    alt={`${instructor.name}, Cheftrainer bei Tempest Jiu-Jitsu Vienna`}
-                    className="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
-                    loading="lazy"
-                  />
+                  {trainerImage ? (
+                    <img
+                      src={trainerImage}
+                      alt={`${instructor.name}, Cheftrainer bei Tempest Jiu-Jitsu Vienna`}
+                      className="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center bg-card text-sm text-muted-foreground">
+                      Trainerbild wird geladen …
+                    </div>
+                  )}
                   <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-card/80 to-transparent lg:hidden" />
                 </div>
 
@@ -127,7 +151,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* BELT SYSTEM BANNER */}
       <section className="py-16 bg-muted text-center border-y border-border">
         <div className="container mx-auto px-6">
           <h3 className="font-display uppercase text-2xl mb-8">Der Weg auf der Matte</h3>
@@ -157,8 +180,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      
-      {/* FINAL CTA */}
+
       <section className="py-24 text-center container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-display uppercase mb-6">Werde Teil des Teams</h2>
         <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
