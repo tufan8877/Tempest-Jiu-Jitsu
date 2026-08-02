@@ -25,7 +25,7 @@ export default function Impressum() {
           
           <h3>Kontakt:</h3>
           <p>
-            Telefon: +49 123 4567890<br />
+            Telefon: <a href="tel:+436763196205">0676 3196205</a><br />
             E-Mail: <a href="mailto:kontakt@tempestbjjvienna.at">kontakt@tempestbjjvienna.at</a>
           </p>
           
