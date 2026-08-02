@@ -26,51 +26,6 @@ const FEATURES = [
   },
 ];
 
-const SCHEDULE = [
-  {
-    day: "Montag",
-    classes: [
-      { name: "BJJ Basics", time: "18:00 - 19:30" },
-      { name: "BJJ Advanced", time: "19:30 - 21:00" },
-    ],
-  },
-  {
-    day: "Dienstag",
-    classes: [
-      { name: "BJJ All Levels", time: "18:30 - 20:00" },
-      { name: "Sparring", time: "20:00 - 21:00" },
-    ],
-  },
-  {
-    day: "Mittwoch",
-    classes: [
-      { name: "No-Gi Grappling", time: "18:30 - 20:00" },
-      { name: "Open Mat", time: "20:00 - 21:30" },
-    ],
-  },
-  {
-    day: "Donnerstag",
-    classes: [
-      { name: "BJJ Basics", time: "18:00 - 19:30" },
-      { name: "Technikkurs", time: "19:30 - 21:00" },
-    ],
-  },
-  {
-    day: "Freitag",
-    classes: [
-      { name: "BJJ All Levels", time: "18:00 - 19:30" },
-      { name: "Wettkampftraining", time: "19:30 - 21:00" },
-    ],
-  },
-  {
-    day: "Samstag",
-    classes: [
-      { name: "BJJ Basics", time: "10:00 - 11:30" },
-      { name: "Open Mat", time: "11:30 - 13:00" },
-    ],
-  },
-];
-
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden">
@@ -203,45 +158,49 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-background py-16 md:py-24">
+      <section className="border-y border-border bg-muted py-16 text-center md:py-20">
         <div className="container mx-auto px-6">
-          <div className="mx-auto max-w-4xl">
-            <SectionHeader title="Trainingszeiten" subtitle="Wann wir rollen" align="center" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="mb-3 block text-sm font-bold uppercase tracking-[0.2em] text-primary">
+              Deine Entwicklung im Brazilian Jiu-Jitsu
+            </span>
+            <h2 className="mb-10 text-4xl font-display uppercase sm:text-5xl md:text-6xl">
+              Der Weg auf der Matte
+            </h2>
+          </motion.div>
 
-            <div className="mt-12 space-y-4 md:mt-16">
-              {SCHEDULE.map((dayData, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group flex flex-col overflow-hidden border border-border bg-card transition-colors hover:border-primary/50 md:flex-row"
-                >
-                  <div className="flex items-center justify-between bg-muted px-6 py-5 transition-colors group-hover:bg-primary/10 md:w-1/3 md:justify-start md:px-8 md:py-6">
-                    <h4 className="text-xl font-display uppercase tracking-wider">{dayData.day}</h4>
-                  </div>
-                  <div className="flex flex-col gap-5 p-6 sm:flex-row sm:gap-12 md:w-2/3">
-                    {dayData.classes.map((c, j) => (
-                      <div key={j} className="flex-1">
-                        <p className="mb-1 font-bold text-primary">{c.time}</p>
-                        <p className="text-lg font-semibold">{c.name}</p>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
+          <div className="flex flex-wrap items-center justify-center gap-7 md:gap-12">
+            <div className="flex flex-col items-center gap-3">
+              <div className="h-5 w-24 border border-gray-300 bg-white md:w-32" />
+              <span className="text-xs font-bold uppercase tracking-wider">Weiß</span>
             </div>
-
-            <div className="mt-10 text-center md:mt-12">
-              <p className="mb-6 text-muted-foreground">
-                Alle Kurse finden in unserem Dojo in der Kampfstraße 42 statt.
-              </p>
-              <Button asChild>
-                <Link href="/kontakt">Jetzt Platz sichern</Link>
-              </Button>
+            <div className="flex flex-col items-center gap-3">
+              <div className="h-5 w-24 bg-blue-600 md:w-32" />
+              <span className="text-xs font-bold uppercase tracking-wider">Blau</span>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <div className="h-5 w-24 bg-purple-700 md:w-32" />
+              <span className="text-xs font-bold uppercase tracking-wider">Lila</span>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <div className="h-5 w-24 bg-[#8b5a2b] md:w-32" />
+              <span className="text-xs font-bold uppercase tracking-wider">Braun</span>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex h-5 w-24 items-center justify-end border border-gray-800 bg-black md:w-32">
+                <div className="h-full w-5 bg-red-600" />
+              </div>
+              <span className="text-xs font-bold uppercase tracking-wider">Schwarz</span>
             </div>
           </div>
+
+          <p className="mx-auto mt-10 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            Jeder Gürtel steht für Erfahrung, Disziplin und persönliches Wachstum. Entscheidend ist nicht, wie schnell du vorankommst, sondern dass du deinen Weg konsequent weitergehst.
+          </p>
         </div>
       </section>
 
