@@ -7,13 +7,16 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-primary flex items-center justify-center font-display font-bold text-sm text-primary-foreground transform -skew-x-12">
-                BJJ
-              </div>
-              <span className="font-display font-bold text-xl tracking-wider">
-                ACADEMY
-              </span>
+            <Link
+              href="/"
+              className="inline-flex items-center mb-6"
+              aria-label="Tempest Jiu-Jitsu Vienna – Startseite"
+            >
+              <img
+                src={`${import.meta.env.BASE_URL}tempest-logo-header.svg`}
+                alt="Tempest Jiu-Jitsu Vienna"
+                className="h-auto w-full max-w-[230px] object-contain transition-transform duration-300 hover:scale-[1.02]"
+              />
             </Link>
             <p className="text-muted-foreground text-sm">
               Elite Brazilian Jiu-Jitsu in Deutschland. Schmiede deinen Charakter auf der Matte.
