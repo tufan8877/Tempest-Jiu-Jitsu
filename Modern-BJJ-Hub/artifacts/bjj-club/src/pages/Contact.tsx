@@ -76,7 +76,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="mb-1 font-bold uppercase tracking-wider">Telefon</h4>
-                    <p className="text-muted-foreground">+49 123 4567890</p>
+                    <a href="tel:+436763196205" className="text-muted-foreground transition-colors hover:text-primary">
+                      0676 3196205
+                    </a>
                   </div>
                 </motion.div>
 
