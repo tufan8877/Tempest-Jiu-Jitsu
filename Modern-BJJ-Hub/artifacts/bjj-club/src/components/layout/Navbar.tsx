@@ -38,13 +38,19 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-primary flex items-center justify-center font-display font-bold text-xl text-primary-foreground transform -skew-x-12 group-hover:scale-105 transition-transform">
-            BJJ
-          </div>
-          <span className="font-display font-bold text-2xl tracking-wider group-hover:text-primary transition-colors">
-            ACADEMY
-          </span>
+        <Link
+          href="/"
+          className="group flex shrink-0 items-center"
+          aria-label="Tempest Jiu-Jitsu Vienna – Startseite"
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}tempest-logo-header.svg`}
+            alt="Tempest Jiu-Jitsu Vienna"
+            className={cn(
+              "w-auto object-contain transition-all duration-300 group-hover:scale-[1.02]",
+              isScrolled ? "h-9 md:h-10" : "h-10 md:h-11"
+            )}
+          />
         </Link>
 
         {/* Desktop Nav */}
