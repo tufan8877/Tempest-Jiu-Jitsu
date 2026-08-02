@@ -48,7 +48,7 @@ export function Navbar() {
             alt="Tempest Jiu-Jitsu Vienna"
             className={cn(
               "w-auto object-contain transition-all duration-300 group-hover:scale-[1.02]",
-              isScrolled ? "h-9 md:h-10" : "h-10 md:h-11"
+              isScrolled ? "h-10 md:h-12" : "h-12 md:h-14"
             )}
           />
         </Link>
