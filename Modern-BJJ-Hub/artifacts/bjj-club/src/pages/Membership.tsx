@@ -1,8 +1,18 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Check, Shield, Users, Trophy } from "lucide-react";
+import { Check, CreditCard, ExternalLink, Shield, Users, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeader, staggerContainer, fadeIn } from "@/components/ui/animations";
+
+/*
+ * WIX-ABO-LINK
+ * Sobald die Wix-Mitgliedschaft eingerichtet ist, hier die vollständige
+ * Wix-Adresse eintragen, zum Beispiel:
+ * https://deine-wix-seite.at/plans-pricing
+ *
+ * Solange der Wert leer bleibt, führen die Buttons zur Kontaktseite.
+ */
+const WIX_MEMBERSHIP_URL = "";
 
 const BENEFITS = [
   {
@@ -23,11 +33,30 @@ const BENEFITS = [
 ];
 
 const STEPS = [
-  "Schreib uns eine kurze Nachricht.",
-  "Vereinbare dein persönliches Probetraining.",
-  "Lerne das Team und das Training kennen.",
-  "Starte deinen Weg bei Tempest Jiu-Jitsu Vienna.",
+  "Wähle auf der Wix-Seite die passende Mitgliedschaft aus.",
+  "Gib deine persönlichen Daten sicher bei Wix ein.",
+  "Schließe deine Mitgliedschaft online ab.",
+  "Komm zum Training und starte deinen Weg bei Tempest.",
 ];
+
+function WixMembershipButton({ className = "" }: { className?: string }) {
+  if (WIX_MEMBERSHIP_URL) {
+    return (
+      <Button size="lg" className={className} asChild>
+        <a href={WIX_MEMBERSHIP_URL} target="_blank" rel="noopener noreferrer">
+          Mitgliedschaft auswählen
+          <ExternalLink size={18} />
+        </a>
+      </Button>
+    );
+  }
+
+  return (
+    <Button size="lg" className={className} asChild>
+      <Link href="/kontakt">Mitgliedschaft anfragen</Link>
+    </Button>
+  );
+}
 
 export default function Membership() {
   return (
@@ -48,8 +77,11 @@ export default function Membership() {
               Mitglied werden
             </motion.h1>
             <motion.p variants={fadeIn} className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-              Werde Teil von Tempest Jiu-Jitsu Vienna und beginne deinen Weg in einem Team, das gemeinsam trainiert, wächst und stärker wird.
+              Werde Teil von Tempest Jiu-Jitsu Vienna. Deine Mitgliedschaft kannst du künftig einfach und sicher über unsere Wix-Buchungsseite auswählen und abschließen.
             </motion.p>
+            <motion.div variants={fadeIn} className="mt-9 flex justify-center">
+              <WixMembershipButton className="min-w-[240px]" />
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -120,7 +152,7 @@ export default function Membership() {
         <div className="container mx-auto px-6">
           <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1fr_0.9fr]">
             <div>
-              <span className="mb-4 block text-sm font-bold uppercase tracking-[0.2em] text-primary">So einfach geht es</span>
+              <span className="mb-4 block text-sm font-bold uppercase tracking-[0.2em] text-primary">Einfach online abschließen</span>
               <h2 className="mb-8 text-4xl font-display uppercase sm:text-5xl">Dein Weg ins Team</h2>
               <div className="space-y-5">
                 {STEPS.map((step, index) => (
@@ -138,14 +170,18 @@ export default function Membership() {
             </div>
 
             <div className="border border-border bg-background p-8 text-center md:p-12">
-              <span className="mb-4 block text-sm font-bold uppercase tracking-[0.2em] text-primary">Bereit?</span>
-              <h2 className="mb-5 text-4xl font-display uppercase">Jetzt starten</h2>
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center bg-primary/10 text-primary">
+                <CreditCard size={28} />
+              </div>
+              <span className="mb-4 block text-sm font-bold uppercase tracking-[0.2em] text-primary">Sicher über Wix</span>
+              <h2 className="mb-5 text-4xl font-display uppercase">Mitgliedschaft wählen</h2>
               <p className="mb-8 leading-relaxed text-muted-foreground">
-                Melde dich bei uns und vereinbare dein Probetraining. Wir beantworten deine Fragen und begleiten dich beim Einstieg.
+                Wähle auf unserer externen Wix-Seite dein gewünschtes Abo. Die Anmeldung und Bezahlung werden dort sicher abgewickelt.
               </p>
-              <Button size="lg" className="w-full" asChild>
-                <Link href="/kontakt">Probetraining vereinbaren</Link>
-              </Button>
+              <WixMembershipButton className="w-full" />
+              <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+                Du wirst zum Abschluss auf eine externe Wix-Seite weitergeleitet.
+              </p>
             </div>
           </div>
         </div>
