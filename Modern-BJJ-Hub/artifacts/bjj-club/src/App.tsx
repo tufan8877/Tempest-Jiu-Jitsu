@@ -1,4 +1,10 @@
-import { Route, Switch, Router as WouterRouter } from "wouter";
+import { useEffect } from "react";
+import {
+  Route,
+  Switch,
+  Router as WouterRouter,
+  useLocation,
+} from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,9 +23,35 @@ import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
 
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration;
+    };
+  }, []);
+
+  useEffect(() => {
+    const animationFrame = window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [location]);
+
+  return null;
+}
+
 function Router() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-1">
         <Switch>
