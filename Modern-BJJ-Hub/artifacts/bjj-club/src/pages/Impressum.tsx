@@ -20,8 +20,7 @@ export default function Impressum() {
           
           <h3>Vertreten durch:</h3>
           <p>
-            Prof. Ricardo Santos (1. Vorsitzender)<br />
-            Lukas Weber (2. Vorsitzender)
+            Leonid (1. Vorsitzender)
           </p>
           
           <h3>Kontakt:</h3>
@@ -45,7 +44,7 @@ export default function Impressum() {
           
           <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</h3>
           <p>
-            Ricardo Santos<br />
+            Leonid<br />
             Kampfstraße 42<br />
             10115 Berlin
           </p>
