@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { SectionHeader, staggerContainer, fadeIn } from "@/components/ui/animations";
 import { Button } from "@/components/ui/button";
+import leonidImage from "../../../../Leonid Bild.jpeg";
 
 const INSTRUCTORS = [
   {
@@ -18,42 +18,7 @@ const INSTRUCTORS = [
   }
 ];
 
-const TRAINER_IMAGE_PARTS = [
-  "leonid-v5-01.txt",
-  "leonid-v5-02.txt",
-  "leonid-v5-03.txt"
-];
-
 export default function About() {
-  const [trainerImage, setTrainerImage] = useState("");
-
-  useEffect(() => {
-    let active = true;
-
-    Promise.all(
-      TRAINER_IMAGE_PARTS.map((file) =>
-        fetch(`${import.meta.env.BASE_URL}${file}?v=5`, { cache: "no-store" }).then((response) => {
-          if (!response.ok) {
-            throw new Error("Trainerbild konnte nicht geladen werden");
-          }
-          return response.text();
-        })
-      )
-    )
-      .then((parts) => {
-        if (!active) return;
-        const base64 = parts.map((part) => part.trim()).join("");
-        setTrainerImage(`data:image/jpeg;base64,${base64}`);
-      })
-      .catch(() => {
-        if (active) setTrainerImage("");
-      });
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
   return (
     <div className="flex flex-col min-h-screen pt-24 bg-background">
       <section className="py-20 md:py-32">
@@ -129,18 +94,12 @@ export default function About() {
                 className="grid grid-cols-1 overflow-hidden border border-border bg-card lg:grid-cols-[minmax(320px,420px)_1fr]"
               >
                 <div className="relative min-h-[520px] overflow-hidden bg-muted lg:min-h-[680px]">
-                  {trainerImage ? (
-                    <img
-                      src={trainerImage}
-                      alt={`${instructor.name}, Cheftrainer bei Tempest Jiu-Jitsu Vienna`}
-                      className="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
-                      onError={() => setTrainerImage("")}
-                    />
-                  ) : (
-                    <div className="absolute inset-0 flex items-center justify-center bg-card text-sm text-muted-foreground">
-                      Trainerbild wird geladen …
-                    </div>
-                  )}
+                  <img
+                    src={leonidImage}
+                    alt={`${instructor.name}, Cheftrainer bei Tempest Jiu-Jitsu Vienna`}
+                    className="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
+                    loading="eager"
+                  />
                   <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-card/80 to-transparent lg:hidden" />
                 </div>
 
