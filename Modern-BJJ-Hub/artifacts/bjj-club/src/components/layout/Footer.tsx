@@ -73,7 +73,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-muted-foreground text-sm">
                 <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                <span>Kampfstraße 42<br />10115 Berlin</span>
+                <span>Standort folgt bald</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Phone size={18} className="text-primary shrink-0" />
