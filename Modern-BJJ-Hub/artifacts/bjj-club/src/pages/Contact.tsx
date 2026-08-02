@@ -176,7 +176,7 @@ export default function Contact() {
         <div className="absolute inset-0 opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Berlin_city_map_-_vector.svg/1024px-Berlin_city_map_-_vector.svg.png')] bg-cover bg-center" />
         <div className="relative z-10 bg-background/90 backdrop-blur-sm p-6 border border-border text-center">
           <MapPin size={32} className="text-primary mx-auto mb-3" />
-          <h4 className="font-display text-xl uppercase mb-1">BJJ Academy</h4>
+          <h4 className="font-display text-xl uppercase mb-1">Tempest Jiu-Jitsu Vienna</h4>
           <p className="text-muted-foreground text-sm">Kampfstraße 42, 10115 Berlin</p>
         </div>
       </section>
