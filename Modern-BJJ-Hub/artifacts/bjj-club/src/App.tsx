@@ -16,6 +16,7 @@ import { Footer } from "@/components/layout/Footer";
 // Pages
 import Home from "@/pages/Home";
 import About from "@/pages/About";
+import Training from "@/pages/Training";
 import Contact from "@/pages/Contact";
 import Impressum from "@/pages/Impressum";
 import Datenschutz from "@/pages/Datenschutz";
@@ -57,6 +58,7 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/ueber-uns" component={About} />
+          <Route path="/trainingszeiten" component={Training} />
           <Route path="/kontakt" component={Contact} />
           <Route path="/impressum" component={Impressum} />
           <Route path="/datenschutz" component={Datenschutz} />
