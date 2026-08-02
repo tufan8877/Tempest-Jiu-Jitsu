@@ -161,14 +161,14 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative w-full max-w-[560px] mx-auto lg:ml-auto aspect-[4/5] md:aspect-[4/5]"
+              className="relative w-full max-w-[560px] mx-auto lg:ml-auto aspect-[4/5]"
             >
-              <div className="absolute inset-0 bg-primary/20 transform translate-x-4 translate-y-4" />
-              <div className="absolute inset-0 border border-border bg-card p-3 md:p-4 overflow-hidden">
+              <div className="absolute inset-0 bg-primary/20 translate-x-4 translate-y-4" />
+              <div className="absolute inset-0 overflow-hidden border border-border bg-[#2b2e34]">
                 <img
                   src={introImage}
                   alt="Leonid und Prof bei Tempest Jiu-Jitsu Vienna"
-                  className="w-full h-full object-contain object-center grayscale hover:grayscale-0 transition-all duration-700"
+                  className="h-full w-full object-cover object-[50%_12%] grayscale transition-all duration-700 hover:grayscale-0"
                 />
               </div>
             </motion.div>
