@@ -7,13 +7,13 @@ import leonidImage from "../../../../Leonid Bild.jpeg";
 const INSTRUCTORS = [
   {
     name: "Leonid Maslovskyi",
-    rank: "Schwarzgurt 1. Dan",
+    rank: "Schwarzgurt 1. Dan · Peter Pecija (ZR Team Vienna)",
     role: "Trainer",
     bio: [
-      "Mein Name ist Leonid Maslovskyi. Ich bin 38 Jahre alt, komme aus der Ukraine und lebe seit 16 Jahren in Österreich. Seit über 12 Jahren trainiere ich Brazilian Jiu-Jitsu und bin Schwarzgurt unter Peter Pecija (ZR Team Vienna).",
-      "Für mich ist Jiu-Jitsu mehr als nur ein Sport – es ist eine Lebenseinstellung. Ich glaube an Disziplin, Respekt und gegenseitige Unterstützung.",
-      "Schritt für Schritt werden wir stärker. Gemeinsam helfen wir uns, nicht nur auf der Matte, sondern auch im Alltag zu wachsen.",
-      "Mein Ziel ist es, ein Team aufzubauen, in dem jeder den anderen unterstützt, sein Potenzial entfaltet und die beste Version seiner selbst wird."
+      "Leonid Maslovskyi ist 38 Jahre alt, stammt aus der Ukraine und lebt seit 16 Jahren in Österreich. Seit über 12 Jahren widmet er sich mit großer Leidenschaft dem Brazilian Jiu-Jitsu und trägt den Schwarzgurt unter Peter Pecija (ZR Team Vienna).",
+      "Für Leonid ist Brazilian Jiu-Jitsu weit mehr als nur ein Kampfsport. Es ist eine Philosophie, die auf Disziplin, Respekt, Ausdauer und persönlicher Weiterentwicklung basiert. Diese Werte vermittelt er in jedem Training – unabhängig davon, ob Anfänger oder fortgeschrittener Athlet auf der Matte steht.",
+      "Sein Ziel ist es, eine starke Gemeinschaft aufzubauen, in der sich jeder willkommen fühlt und sich gegenseitig unterstützt. Schritt für Schritt wachsen die Mitglieder gemeinsam – nicht nur technisch im Brazilian Jiu-Jitsu, sondern auch persönlich und mental.",
+      "Unter seiner Leitung steht Tempest Jiu-Jitsu Vienna für hochwertiges Training, kontinuierliche Weiterentwicklung und einen respektvollen Teamgeist. Sein Anspruch ist es, jedem Mitglied dabei zu helfen, das eigene Potenzial zu entfalten und die beste Version seiner selbst zu werden."
     ]
   }
 ];
@@ -72,7 +72,7 @@ export default function About() {
                 <div className="relative min-h-[520px] overflow-hidden bg-muted lg:min-h-[680px]">
                   <img
                     src={leonidImage}
-                    alt={`${instructor.name}, Cheftrainer bei Tempest Jiu-Jitsu Vienna`}
+                    alt={`${instructor.name}, Trainer bei Tempest Jiu-Jitsu Vienna`}
                     className="absolute inset-0 h-full w-full object-cover object-[50%_18%]"
                     loading="eager"
                   />
