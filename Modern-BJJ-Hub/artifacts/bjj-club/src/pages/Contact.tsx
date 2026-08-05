@@ -2,12 +2,19 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { ExternalLink, MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SectionHeader, staggerContainer, fadeIn } from "@/components/ui/animations";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
+/*
+ * WIX-KONTAKTFORMULAR
+ * Sobald die Wix-Kontaktseite fertig ist, hier die vollständige URL eintragen.
+ * Beispiel: https://deine-wix-seite.at/kontakt
+ */
+const WIX_CONTACT_URL = "";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name muss mindestens 2 Zeichen lang sein."),
@@ -16,6 +23,25 @@ const formSchema = z.object({
 });
 
 type FormValues = z.infer<typeof formSchema>;
+
+function WixContactButton() {
+  if (WIX_CONTACT_URL) {
+    return (
+      <Button type="button" size="lg" variant="outline" className="w-full" asChild>
+        <a href={WIX_CONTACT_URL} target="_blank" rel="noopener noreferrer">
+          Kontaktformular öffnen
+          <ExternalLink size={18} />
+        </a>
+      </Button>
+    );
+  }
+
+  return (
+    <Button type="button" size="lg" variant="outline" className="w-full" disabled>
+      Kontaktformular folgt
+    </Button>
+  );
+}
 
 export default function Contact() {
   const { toast } = useToast();
@@ -165,6 +191,19 @@ export default function Contact() {
                   Senden
                 </Button>
               </form>
+
+              <div className="my-6 flex items-center gap-4">
+                <div className="h-px flex-1 bg-border" />
+                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Alternativ</span>
+                <div className="h-px flex-1 bg-border" />
+              </div>
+
+              <WixContactButton />
+              {!WIX_CONTACT_URL && (
+                <p className="mt-3 text-center text-xs leading-relaxed text-muted-foreground">
+                  Die Verlinkung zum Wix-Kontaktformular wird ergänzt, sobald die Wix-Seite fertig ist.
+                </p>
+              )}
             </motion.div>
           </div>
         </div>
